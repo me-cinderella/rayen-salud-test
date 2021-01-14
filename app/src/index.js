@@ -1,11 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
 import reportWebVitals from './reportWebVitals';
+import Routes from 'routes';
+import rootReducer from 'reducers';
+import getTutorials from 'actions/fetchActions';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'styles/main.css';
 
+rootReducer.dispatch(getTutorials())
+
 ReactDOM.render(
-  <div />,
+  <Provider store={rootReducer}>
+    <Routes />
+  </Provider>,
   document.getElementById('root')
 );
 
