@@ -9,8 +9,9 @@ function AddTutorial(props) {
     const [data, setData] = useState({fecha: dateFormatter('current')});
 
     const handleInputChange = () => event => {
-        data[event.target.id] = event.target.value;
-        setData(data);
+        let fieldName = event.target.id;
+        let fleldVal = event.target.value;
+        data({...data, [fieldName]: fleldVal});
     }
 
     const handleSubmit = () => {
