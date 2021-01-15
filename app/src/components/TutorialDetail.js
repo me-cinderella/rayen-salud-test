@@ -24,7 +24,7 @@ function TutorialDetail(props) {
     return (
         <Container>
             <Row className="text-center mt-5 mb-5">
-                <h1>Tutorial {data.id}</h1>
+                <h1>Detalle tutorial</h1>
             </Row>
             <Row className="align-center">
             {error? 
