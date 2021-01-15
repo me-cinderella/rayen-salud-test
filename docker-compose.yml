@@ -1,0 +1,13 @@
+version: '3'
+services:
+  frontend:
+    build:
+      context: ./app
+    volumes:
+      - 'app:/app'
+      - '/app/node_modules'
+    ports:
+      - "3000:3000"
+
+volumes:
+  app:
