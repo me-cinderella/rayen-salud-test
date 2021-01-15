@@ -6,13 +6,15 @@ import {
 } from "react-router-dom";
 
 import NotFound from 'components/NotFound';
-import Home from 'views/Home';
+import TutorialsList from 'components/TutorialsList';
+import TutorialDetail from 'components/TutorialDetail';
 
 const Routes = () => {
   return (
     <Router>
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={TutorialsList} />
+          <Route path="/tutorial/:id" component={TutorialDetail} />
           <Route path='*' component={NotFound} />
         </Switch>
     </Router>
