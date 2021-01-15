@@ -11,7 +11,7 @@ function AddTutorial(props) {
     const handleInputChange = () => event => {
         let fieldName = event.target.id;
         let fleldVal = event.target.value;
-        data({...data, [fieldName]: fleldVal});
+        setData({...data, [fieldName]: fleldVal});
     }
 
     const handleSubmit = () => {
@@ -20,7 +20,8 @@ function AddTutorial(props) {
             body: JSON.stringify(data)
           })
           .then((response) => {
-            setData({fecha: dateFormatter('current')});
+            const emptyData = {fecha: dateFormatter('current')}
+            setData(emptyData);
             setSubmitStatus('formulario enviado');
           })
           .catch(() => setSubmitStatus('ha ocurrido un error'));
@@ -31,6 +32,11 @@ function AddTutorial(props) {
             <Row className="m-5">
                 <Col xs={8}>
                     <h1>Agregar tutorial</h1>
+                    <Link to="/">
+                        <Button variant="primary" className="mt-2 mb-2">
+                            volver al home
+                        </Button>
+                    </Link>
                     <Form>
                         <Form.Group controlId="nombre">
                             <Form.Label>Nombre</Form.Label>
