@@ -4,8 +4,8 @@ import { Row, Col, Container } from "react-bootstrap";
 
 function TutorialDetail(props) {
 
-    const [error, setError] = React.useState('');
-    const [data, setData] = React.useState([]);
+    const [error, setError] = useState('');
+    const [data, setData] = useState([]);
 
     useEffect(() => {
         const id = props.match.params.id;

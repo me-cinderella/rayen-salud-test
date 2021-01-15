@@ -2,20 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { dateFormatterMonthName } from 'utils/Formatters';
 import { Row, Col, Container } from "react-bootstrap";
 
-function TutorialsList(props) {
+function TutorialsList() {
 
-    const [error, setError] = React.useState('');
-    const [data, setData] = React.useState([]);
+    const [error, setError] = useState('');
+    const [data, setData] = useState([]);
 
     useEffect(() => {
         fetch('https://rayentutorialtestapp.azurewebsites.net/tutorials')
         .then((response) => response.json())
-        .then((data) => {
-          setData(data);
-        })
-        .catch((e) => {
-          setError('fetch failed');
-        });
+        .then((data) => setData(data))
+        .catch(() =>  setError('fetch failed'));
     }, []) 
 
     const tutorialsList = data.map( item  => {
@@ -42,7 +38,7 @@ function TutorialsList(props) {
             <h1>Tutoriales</h1>
         </Row>
         <Row className="align-center">
-            { tutorialsList }
+            { tutorialsList ? tutorialsList : <p>{error}</p> }
         </Row>
         </Container>
     );
