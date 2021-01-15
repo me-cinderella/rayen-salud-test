@@ -34,4 +34,15 @@ Dentro de la aplicacion existe un menu que permite navegar a las soluciones de l
 
     - home:
         - url: "http://localhost:3000/"
-        - 
+        - Permite visualizar lista de tutoriales
+        - Permite eliminar un tutorial particular
+        - Permite eliminar todos los tutoriales
+        - Permite realizar busquedas por nombre entre los tutoriales disponibles
+        - Permite dirigirse al formulario para agregar tutoriales
+    - detalle tutorial
+        - url: "http://localhost:3000/tutorial/:id"
+        - Permite visualizar la data del tutorial segun id
+        - Permite editar el tutorial
+    - agregar
+        - url: "http://localhost:3000/agregar"
+        - Permite ingresar un nuevo tutorial
